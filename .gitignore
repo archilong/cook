@@ -1,0 +1,47 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+
+# Node / Expo
+node_modules/
+.expo/
+.expo-shared/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# App build outputs
+android/
+ios/
+web-build/
+
+# Uploads and local runtime files
+backend/uploads/
+backend/.coverage
+backend/htmlcov/
+backend/*.db
+backend/*.sqlite*
+
+# Local verification artifacts
+.superpowers/
+mobile/test-results/
+mobile/verification-*.png
+mobile/verify-upload-*.svg

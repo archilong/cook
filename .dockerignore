@@ -1,0 +1,33 @@
+# Runtime secrets and local config
+.env
+.env.*
+!.env.example
+
+# Python
+backend/.venv
+backend/venv
+backend/__pycache__
+backend/**/*.pyc
+backend/.pytest_cache
+backend/.ruff_cache
+backend/uploads
+backend/*.db
+backend/*.sqlite*
+
+# Node / Expo
+mobile/node_modules
+mobile/.expo
+mobile/.expo-shared
+mobile/web-build
+mobile/dist
+node_modules
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+
+# Verification artifacts
+mobile/verification-*.png
+mobile/verify-upload-*.svg

@@ -1,0 +1,23 @@
+{
+  "expo": {
+    "name": "Cook Picture",
+    "slug": "cook-picture",
+    "scheme": "cookpicture",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#FFF7ED"
+      }
+    },
+    "plugins": ["expo-router", "expo-secure-store", "expo-notifications", "expo-image-picker"],
+    "extra": {
+      "apiBaseUrl": "http://10.0.2.2:8000/api/v1"
+    }
+  }
+}
