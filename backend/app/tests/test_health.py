@@ -35,6 +35,26 @@ def test_health_check_returns_app_status(monkeypatch: pytest.MonkeyPatch) -> Non
     assert body["environment"] == "development"
 
 
+def test_root_health_check_returns_app_status(monkeypatch: pytest.MonkeyPatch) -> None:
+    load_config(
+        monkeypatch,
+        APP_NAME="Cook Picture API",
+        ENVIRONMENT="development",
+        JWT_SECRET_KEY="change-this-secret-before-production",
+    )
+    main = importlib.import_module("app.main")
+    main = importlib.reload(main)
+    client = TestClient(main.app)
+
+    response = client.get("/")
+
+    body = response.json()
+    assert response.status_code == 200
+    assert body["status"] == "ok"
+    assert body["app_name"] == "Cook Picture API"
+    assert body["environment"] == "development"
+
+
 def test_settings_parse_comma_separated_cors_origins_from_environment(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:

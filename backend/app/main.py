@@ -40,6 +40,14 @@ def create_app() -> FastAPI:
 
     app.mount("/static/uploads", StaticFiles(directory=settings.local_upload_dir), name="uploads")
 
+    @app.get("/", include_in_schema=False)
+    def root_health() -> dict[str, str]:
+        return {
+            "status": "ok",
+            "app_name": settings.app_name,
+            "environment": settings.environment,
+        }
+
     app.include_router(health_router, prefix=settings.api_v1_prefix)
     app.include_router(auth_router, prefix=settings.api_v1_prefix)
     app.include_router(users_router, prefix=settings.api_v1_prefix)
